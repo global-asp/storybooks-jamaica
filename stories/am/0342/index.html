@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" sizes="180x180" href="/storybooks-jamaica/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/storybooks-jamaica/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/storybooks-jamaica/favicon-16x16.png">
-	<link rel="manifest" href="/storybooks-jamaica/site.webmanifest">
-	<link rel="mask-icon" href="/storybooks-jamaica/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href=/storybooks-jamaica/favicon.ico?v=2">
-	<meta name="msapplication-TileColor" content="#da532c">
+	<link rel="apple-touch-icon" sizes="180x180" href="/storybooks-jamaica/apple-touch-icon.png?v=4">
+	<link rel="icon" type="image/png" sizes="32x32" href="/storybooks-jamaica/favicon-32x32.png?v=4">
+	<link rel="icon" type="image/png" sizes="16x16" href="/storybooks-jamaica/favicon-16x16.png?v=4">
+	<link rel="manifest" href="/storybooks-jamaica/site.webmanifest?v=4">
+	<link rel="mask-icon" href="/storybooks-jamaica/safari-pinned-tab.svg?v=4" color="#5bbad5">
+	<link rel="shortcut icon" href="/storybooks-jamaica/favicon.ico?v=4">
+	<meta name="msapplication-TileColor" content="#00aba9">
 	<meta name="theme-color" content="#ffffff">
 	<title>ቅጣት - Storybooks Jamaica</title>
 	<meta name="description" content="Storybooks Jamaica is designed specifically for teachers, parents, and community members and makes 40 stories from the African Storybook available with text and audio in English and Jamaican Creole, as well as the most widely spoken languages of Jamaica.
@@ -20,12 +20,10 @@
 	<link rel="stylesheet" href="/storybooks-jamaica/css/fontello.min.css">
 	<link rel="canonical" href="https://global-asp.github.io//storybooks-jamaica/stories/am/0342/">
 	<link rel="alternate" type="application/rss+xml" title="Storybooks Jamaica" href="/storybooks-jamaica">
-	<script src="/storybooks-jamaica/js/sbc.js"></script>
+	<script src="/storybooks-jamaica/js/sbc.min.js"></script>
 </head>
 
-
   <body>
-
 
     <div class="container">
 
@@ -49,7 +47,7 @@
 	</section>
 </header>
 
-        <div class="float-right"><a class="btn btn-lg disabled" target="_blank" href="">Download PDF</a></div>
+        <div class="float-right"><button class="btn btn-lg" onclick="pdfdl()">Download Options</button></div>
 
 <div class="float-right">
 	<select class="btn btn-lg" onchange="window.location=this.value" accesskey="l">
@@ -85,19 +83,61 @@
 		<h3><span class="tooltip tooltip-right" data-tooltip="Language"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/language.svg" alt="Language"></span> <a href="/storybooks-jamaica/stories/am">Amharic</a></h3>
 		<h3><span class="tooltip tooltip-right" data-tooltip="Level"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/level.svg" alt="Level"></span> <a href="/storybooks-jamaica/stories/am/level2">Level 2</a></h3>
 		<h3><span class="tooltip tooltip-right" data-tooltip="Narrate story"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/speaker.svg" alt="Narrate full story"></span> <span class="cover_msg">The audio for this story is currently not available.</span></h3>
+
 	</div>
 </div>
+<div class="modal" id="modal-pdf">
+  <a href="#close" class="modal-overlay" aria-label="Close" onclick="pdfdl()"></a>
+  <div class="modal-container">
+    <div class="modal-header">
+      <a href="#close" class="btn btn-clear float-right" aria-label="Close" onclick="pdfdl()"></a>
+      <div class="modal-title h5">Download Options</div>
+    </div>
+    <div class="modal-body">
+      <div class="content">
+        <h4>Regular PDFs (full-page)</h4>
+        <ul>
+          <li><strong><a href="https://globalstorybooks.net/media/sbjm/pdf/am/am-0342_punishment.pdf" target="_blank">Regular PDF (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/landscape-mono.svg" width="100"></center></a></strong></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/wordless/0342_punishment-wordless.pdf" target="_blank">Wordless PDF (landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-wordless.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless/am/am-0342_punishment-imageless.pdf" target="_blank">Imageless PDF (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/landscape-imageless.svg" width="100"></center></a></li>
+        </ul>
+
+        <h4>Bilingual PDFs</h4>
+        <ul>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/bilingual/am-en/0342_punishment-bilingual_am-en.pdf" target="_blank">Bilingual PDF (Amharic-English, landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-bil1.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/bilingual/am-jam/0342_punishment-bilingual_am-jam.pdf" target="_blank">Bilingual PDF (Amharic-Jamaican Creole, landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-bil1.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-bilingual/am-en/0342_punishment-imageless-bilingual_am-en.pdf" target="_blank">Bilingual imageless PDF (Amharic-English, landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-imageless-bil1.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-bilingual/am-jam/0342_punishment-imageless-bilingual_am-jam.pdf" target="_blank">Bilingual imageless PDF (Amharic-Jamaican Creole, landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-imageless-bil2.svg" width="100"></center></a></li>
+        </ul>
+
+        <h4>Booklet PDFs (for printing)</h4>
+        <ul>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/booklet/am/am-0342_punishment-booklet.pdf" target="_blank">Booklet PDF (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/booklet-mono.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/bilingual-booklet/am-en/0342_punishment-bilingual_am-en-booklet.pdf" target="_blank">Bilingual booklet PDF (Amharic-English)<br><center><img src="/storybooks-jamaica/css/editions/booklet-bil1.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/bilingual-booklet/am-jam/0342_punishment-bilingual_am-jam-booklet.pdf" target="_blank">Bilingual booklet PDF (Amharic-Jamaican Creole)<br><center><img src="/storybooks-jamaica/css/editions/booklet-bil2.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/wordless-booklet/0342_punishment-wordless-booklet.pdf" target="_blank">Wordless booklet<br><center><img src="/storybooks-jamaica/css/editions/booklet-wordless.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-booklet/am/am-0342_punishment-imageless-booklet.pdf" target="_blank">Imageless booklet (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/booklet-imageless.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-bilingual-booklet/am-en/0342_punishment-imageless-bilingual_am-en-booklet.pdf" target="_blank">Bilingual imageless booklet (Amharic-English)<br><center><img src="/storybooks-jamaica/css/editions/booklet-imageless-bil1.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-bilingual-booklet/am-jam/0342_punishment-imageless-bilingual_am-jam-booklet.pdf" target="_blank">Bilingual imageless booklet (Amharic-Jamaican Creole)<br><center><img src="/storybooks-jamaica/css/editions/booklet-imageless-bil2.svg" width="100"></center></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="btn btn-primary" onclick="pdfdl()">Close</a>
+    </div>
+  </div>
+</div>
+
 <hr>
 
-<div id="text02" class="columns">
+        <div id="text02" class="columns">
 	<div class="column col-5 col-lg-12 col-md-12 col-sm-12"><img class="img-responsive" src="https://raw.githubusercontent.com/global-asp/gsn-imagebank/master/0342/02.jpg"></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt def"><h3>
 	አንድ ቀን እናቴ በጣም ብዙ ፍራፍሬዎች አመጣች።
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	One day, mama got a
-lot of fruit.
+	One day, mama got a lot of fruit.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Wan die mama get a uol iip a fruut.
@@ -124,10 +164,9 @@ lot of fruit.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	“When can we have
-some fruit?” we ask.
-“We will eat the fruit
-tonight,” says mama.
+	“When can we have some fruit?” we ask.
+
+“We will have the fruit tonight,” says mama.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	“Wen wi kyan get som fruut?” we aks ar se. “Wi a go iit di fruut tunait,” mama se.
@@ -154,9 +193,7 @@ tonight,” says mama.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	My brother Rahim is
-greedy. He tastes all the
-fruit. He eats a lot of it.
+	My brother Rahim is greedy. He tastes all the fruit. He eats a lot of it.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Mi breda Rayiim krievn. Im tek piis a aal a di fruut dem. Im iit out uol iip a it.
@@ -183,11 +220,9 @@ fruit. He eats a lot of it.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	“Look at what Rahim
-did!” shouts my little
-brother. “Rahim is
-naughty and selfish,” I
-say.
+	“Look at what Rahim did!” shouts my little brother.
+
+“Rahim is naughty and selfish,” I say.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	“Luk pon we Rayiim du!” mi likl breda baal out. “Rayiim naav no biyievya an im selfish,” mi se.
@@ -214,8 +249,7 @@ say.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	Mother is angry with
-Rahim.
+	Mother is angry with Rahim.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Mama beks wid Rayiim.
@@ -242,9 +276,7 @@ Rahim.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	We are also angry with
-Rahim. But Rahim is not
-sorry.
+	We are also angry with Rahim. But Rahim is not sorry.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Aal a wi beks wid Rayiim. Bot Rayiim no sari.
@@ -271,9 +303,7 @@ sorry.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	“Aren’t you going to
-punish Rahim?” asks
-little brother.
+	“Aren’t you going to punish Rahim?” asks little brother.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	“Yu naa go ponish Rayiim?” mi likl breda aks.
@@ -300,8 +330,7 @@ little brother.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	“Rahim, soon you will
-be sorry,” warns mama.
+	“Rahim, soon you will be sorry,” warns mama.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	“Rayiim, yu suuhn sari,” mama waan im se.
@@ -328,8 +357,7 @@ be sorry,” warns mama.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	Rahim starts to feel
-sick.
+	Rahim starts to feel sick.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Rayiim staat fiil sik.
@@ -356,8 +384,7 @@ sick.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	“My tummy is so sore,”
-whispers Rahim.
+	“My tummy is so sore,” whispers Rahim.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	“Mi beli a ort mi,” Rayiim bieli se.
@@ -384,9 +411,7 @@ whispers Rahim.
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	Mama knew this would
-happen. The fruit is
-punishing Rahim!
+	Mama knew this would happen. The fruit is punishing Rahim!
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Mama nuo se dis did a go apm. Di fruut a ponish Rayiim!
@@ -413,11 +438,9 @@ punishing Rahim!
 	</h3></div>
 
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l1"><h3>
-	Later, Rahim says sorry
-to us. “I will never be so
-greedy again,” he
-promises. And we all
-believe him.
+	Later, Rahim says sorry to us. “I will never be so greedy again,” he promises.
+
+And we all believe him.
 	</h3></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level2-txt l2"><h3>
 	Lieta, Rayiim se sari tu aal a wi. “Mi wi neva bi so krievn agen,” im swier se. An aal a wi biliiv im.
@@ -437,14 +460,15 @@ believe him.
 </div>
 <hr>
 
-<div id="colophon" class="columns">
+
+        <div id="colophon" class="columns">
 	<div class="column col-7 col-lg-12 col-md-12 col-sm-12">
-		<h5>Written by: Adelheid Marie Bwire</h5>
-		<h5>Illustrated by: Melany Pietersen</h5>
-		<h5>Translated by: Dawit Girma</h5>
-		<h5>Language: <a href="/storybooks-jamaica/stories/am">Amharic</a></h5>
-		<h5><a href="/storybooks-jamaica/stories/am/level2">Level 2</a></h5>
-		<h5>Source: <a href="https://africanstorybook.org/reader.php?id=11989" target="_blank">Punishment</a> from <a href="https://africanstorybook.org/">African Storybook</a></h5>
+		<h5><span class="colophon-heading">Written by:</span> Adelheid Marie Bwire</h5>
+		<h5><span class="colophon-heading">Illustrated by:</span> Melany Pietersen</h5>
+		<h5><span class="colophon-heading">Translated by:</span> Dawit Girma</h5>
+		<h5><span class="colophon-heading">Language:</span> <a href="/storybooks-jamaica/stories/am">Amharic</a></h5>
+		<h5><span class="colophon-heading">Level:</span> <a href="/storybooks-jamaica/stories/am/level2">Level 2</a></h5>
+		<h5><span class="colophon-heading">Source:</span> <a href="https://africanstorybook.org/reader.php?id=11989" target="_blank">Punishment</a> from <a href="https://africanstorybook.org/">African Storybook</a></h5>
 
 		<div><a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 International License</a>.</div>
 
@@ -465,10 +489,9 @@ believe him.
 </div>
 <div>
 <h5>Options</h5>
-	<a class="btn btn-lg" href="/storybooks-jamaica/stories/am" class="button">Back to stories list</a> <a class="btn btn-lg disabled" target="_blank" href="">Download PDF</a>
+	<a class="btn btn-lg" href="/storybooks-jamaica/stories/am" class="button">Back to stories list</a> <a class="btn btn-lg" href="https://globalstorybooks.net/media/sbjm/pdf/am/am-0342_punishment.pdf" target="_blank">Download PDF</a>
 <br><br>
 </div>
-
 
 
     </div>

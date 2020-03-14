@@ -4,13 +4,13 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="apple-touch-icon" sizes="180x180" href="/storybooks-jamaica/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="/storybooks-jamaica/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="/storybooks-jamaica/favicon-16x16.png">
-	<link rel="manifest" href="/storybooks-jamaica/site.webmanifest">
-	<link rel="mask-icon" href="/storybooks-jamaica/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="shortcut icon" href=/storybooks-jamaica/favicon.ico?v=2">
-	<meta name="msapplication-TileColor" content="#da532c">
+	<link rel="apple-touch-icon" sizes="180x180" href="/storybooks-jamaica/apple-touch-icon.png?v=4">
+	<link rel="icon" type="image/png" sizes="32x32" href="/storybooks-jamaica/favicon-32x32.png?v=4">
+	<link rel="icon" type="image/png" sizes="16x16" href="/storybooks-jamaica/favicon-16x16.png?v=4">
+	<link rel="manifest" href="/storybooks-jamaica/site.webmanifest?v=4">
+	<link rel="mask-icon" href="/storybooks-jamaica/safari-pinned-tab.svg?v=4" color="#5bbad5">
+	<link rel="shortcut icon" href="/storybooks-jamaica/favicon.ico?v=4">
+	<meta name="msapplication-TileColor" content="#00aba9">
 	<meta name="theme-color" content="#ffffff">
 	<title>Sakiima Sang - Storybooks Jamaica</title>
 	<meta name="description" content="Storybooks Jamaica is designed specifically for teachers, parents, and community members and makes 40 stories from the African Storybook available with text and audio in English and Jamaican Creole, as well as the most widely spoken languages of Jamaica.
@@ -20,12 +20,10 @@
 	<link rel="stylesheet" href="/storybooks-jamaica/css/fontello.min.css">
 	<link rel="canonical" href="https://global-asp.github.io//storybooks-jamaica/stories/jam/0315/">
 	<link rel="alternate" type="application/rss+xml" title="Storybooks Jamaica" href="/storybooks-jamaica">
-	<script src="/storybooks-jamaica/js/sbc.js"></script>
+	<script src="/storybooks-jamaica/js/sbc.min.js"></script>
 </head>
 
-
   <body>
-
 
     <div class="container">
 
@@ -49,7 +47,7 @@
 	</section>
 </header>
 
-        <div class="float-right"><a class="btn btn-lg disabled" target="_blank" href="">Download PDF</a></div>
+        <div class="float-right"><button class="btn btn-lg" onclick="pdfdl()">Download Options</button></div>
 
 <div class="float-right">
 	<select class="btn btn-lg" onchange="window.location=this.value" accesskey="l">
@@ -76,8 +74,8 @@
 		<div class="btn-group cover-buttons">
 			<a href="#text02" class="btn btn-lg" title="Next page"><i class="icon-arrow-down"></i></a>
 			<button class="btn btn-lg disabled" id="playbutton01" onclick="playpause('01')" title="Play/pause"><i class="icon-volume-up"></i></button>
-			<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-			<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+			<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+			<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 		</div>
 		<h3><span class="tooltip tooltip-right" data-tooltip="Written by"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/pencil.svg" alt="Written by"></span> Ursula Nafula</h3>
 		<h3><span class="tooltip tooltip-right" data-tooltip="Illustrated by"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/art.svg" alt="Illustrated by"></span> Peris Wachuka</h3>
@@ -85,11 +83,54 @@
 		<h3><span class="tooltip tooltip-right" data-tooltip="Language"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/language.svg" alt="Language"></span> <a href="/storybooks-jamaica/stories/jam">Jamaican Creole</a></h3>
 		<h3><span class="tooltip tooltip-right" data-tooltip="Level"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/level.svg" alt="Level"></span> <a href="/storybooks-jamaica/stories/jam/level3">Level 3</a></h3>
 		<h3><span class="tooltip tooltip-right" data-tooltip="Narrate story"><img class="cover-icon cover-icon-text" src="/storybooks-jamaica/css/speaker.svg" alt="Narrate full story"></span> <span class="cover_msg">The audio for this story is currently not available.</span></h3>
+
 	</div>
 </div>
+<div class="modal" id="modal-pdf">
+  <a href="#close" class="modal-overlay" aria-label="Close" onclick="pdfdl()"></a>
+  <div class="modal-container">
+    <div class="modal-header">
+      <a href="#close" class="btn btn-clear float-right" aria-label="Close" onclick="pdfdl()"></a>
+      <div class="modal-title h5">Download Options</div>
+    </div>
+    <div class="modal-body">
+      <div class="content">
+        <h4>Regular PDFs (full-page)</h4>
+        <ul>
+          <li><strong><a href="https://globalstorybooks.net/media/sbjm/pdf/jam/jam-0315_sakima.pdf" target="_blank">Regular PDF (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/landscape-mono.svg" width="100"></center></a></strong></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/wordless/0315_sakima-wordless.pdf" target="_blank">Wordless PDF (landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-wordless.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless/jam/jam-0315_sakima-imageless.pdf" target="_blank">Imageless PDF (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/landscape-imageless.svg" width="100"></center></a></li>
+        </ul>
+
+        <h4>Bilingual PDFs</h4>
+        <ul>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/bilingual/jam-en/0315_sakima-bilingual_jam-en.pdf" target="_blank">Bilingual PDF (Jamaican Creole-English, landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-bil1.svg" width="100"></center></a></li>
+          
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-bilingual/jam-en/0315_sakima-imageless-bilingual_jam-en.pdf" target="_blank">Bilingual imageless PDF (Jamaican Creole-English, landscape)<br><center><img src="/storybooks-jamaica/css/editions/landscape-imageless-bil1.svg" width="100"></center></a></li>
+          
+        </ul>
+
+        <h4>Booklet PDFs (for printing)</h4>
+        <ul>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/booklet/jam/jam-0315_sakima-booklet.pdf" target="_blank">Booklet PDF (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/booklet-mono.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/bilingual-booklet/jam-en/0315_sakima-bilingual_jam-en-booklet.pdf" target="_blank">Bilingual booklet PDF (Jamaican Creole-English)<br><center><img src="/storybooks-jamaica/css/editions/booklet-bil1.svg" width="100"></center></a></li>
+          
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/wordless-booklet/0315_sakima-wordless-booklet.pdf" target="_blank">Wordless booklet<br><center><img src="/storybooks-jamaica/css/editions/booklet-wordless.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-booklet/jam/jam-0315_sakima-imageless-booklet.pdf" target="_blank">Imageless booklet (monolingual)<br><center><img src="/storybooks-jamaica/css/editions/booklet-imageless.svg" width="100"></center></a></li>
+          <li><a href="https://gitlab.com/global-asp/sbjm-pdf/raw/master/imageless-bilingual-booklet/jam-en/0315_sakima-imageless-bilingual_jam-en-booklet.pdf" target="_blank">Bilingual imageless booklet (Jamaican Creole-English)<br><center><img src="/storybooks-jamaica/css/editions/booklet-imageless-bil1.svg" width="100"></center></a></li>
+          
+        </ul>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a class="btn btn-primary" onclick="pdfdl()">Close</a>
+    </div>
+  </div>
+</div>
+
 <hr>
 
-<div id="text02" class="columns">
+        <div id="text02" class="columns">
 	<div class="column col-5 col-lg-12 col-md-12 col-sm-12"><img class="img-responsive" src="https://raw.githubusercontent.com/global-asp/gsn-imagebank/master/0315/02.jpg"></div>
 	<div class="column col-6 col-lg-11 col-md-12 col-sm-12 level3-txt def"><h3>
 	Sakiima did liv wid im pierens dem an im fuor iez uol sista. Dem did liv pan wahn rich man lan. Dem tach ous did de a di en a wahn lain a chrii.
@@ -112,8 +153,8 @@ Their grass-thatched hut was at the end of a row of trees.
 		<button class="btn btn-lg disabled" id="playbutton02" onclick="playpause('02')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -141,8 +182,8 @@ Sakima was a talented boy.
 		<button class="btn btn-lg disabled" id="playbutton03" onclick="playpause('03')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -170,8 +211,8 @@ For example, he could sit with older members of the village and discuss importan
 		<button class="btn btn-lg disabled" id="playbutton04" onclick="playpause('04')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -201,8 +242,8 @@ Sakima was left with his little sister.
 		<button class="btn btn-lg disabled" id="playbutton05" onclick="playpause('05')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -230,8 +271,8 @@ One day his mother asked him, “Where do you learn these songs from, Sakima?”
 		<button class="btn btn-lg disabled" id="playbutton06" onclick="playpause('06')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -257,8 +298,8 @@ One day his mother asked him, “Where do you learn these songs from, Sakima?”
 		<button class="btn btn-lg disabled" id="playbutton07" onclick="playpause('07')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -288,8 +329,8 @@ She would sway to the soothing tune.
 		<button class="btn btn-lg disabled" id="playbutton08" onclick="playpause('08')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -317,8 +358,8 @@ Sakima would accept and sing it over and over again.
 		<button class="btn btn-lg disabled" id="playbutton09" onclick="playpause('09')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -346,8 +387,8 @@ Sakima knew that there was something wrong.
 		<button class="btn btn-lg disabled" id="playbutton10" onclick="playpause('10')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -377,8 +418,8 @@ The man was very sad and lonely.
 		<button class="btn btn-lg disabled" id="playbutton11" onclick="playpause('11')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -408,8 +449,8 @@ But his parents dismissed him.
 		<button class="btn btn-lg disabled" id="playbutton12" onclick="playpause('12')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -439,8 +480,8 @@ She said, “Sakima’s songs soothe me when I am hungry. They will soothe the r
 		<button class="btn btn-lg disabled" id="playbutton13" onclick="playpause('13')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -466,8 +507,8 @@ She said, “Sakima’s songs soothe me when I am hungry. They will soothe the r
 		<button class="btn btn-lg disabled" id="playbutton14" onclick="playpause('14')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -495,8 +536,8 @@ Slowly, the head of the rich man began to show through the big window.
 		<button class="btn btn-lg disabled" id="playbutton15" onclick="playpause('15')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -524,8 +565,8 @@ But one man said, “Nobody has been able to console the boss. Does this blind b
 		<button class="btn btn-lg disabled" id="playbutton16" onclick="playpause('16')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -553,8 +594,8 @@ But the rich man rushed out and said, “Please sing again.”
 		<button class="btn btn-lg disabled" id="playbutton17" onclick="playpause('17')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -582,8 +623,8 @@ They had found the rich man’s son beaten up and left on the side of the road.
 		<button class="btn btn-lg disabled" id="playbutton18" onclick="playpause('18')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
@@ -613,22 +654,23 @@ He took his son and Sakima to hospital so Sakima could regain his sight.
 		<button class="btn btn-lg disabled" id="playbutton19" onclick="playpause('19')" title="Play/pause"><i class="icon-volume-up"></i></button>
 	</div>
 	<div class="btn-group switcher-group">
-		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch between Jamaican Creole and English">en</button>
-		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch between Jamaican Creole and Jamaican Creole">jam</button>
+		<button onclick="switchlang('jam,en','en,jam,jam')" class="btn btn-lg lang-primary" title="Switch to English">en</button>
+		<button onclick="switchlang('jam,jam','en,jam,jam')" class="btn btn-lg lang-secondary" title="Switch to Jamaican Creole">jam</button>
 	</div>
 </div>
 
 </div>
 <hr>
 
-<div id="colophon" class="columns">
+
+        <div id="colophon" class="columns">
 	<div class="column col-7 col-lg-12 col-md-12 col-sm-12">
-		<h5>Written by: Ursula Nafula</h5>
-		<h5>Illustrated by: Peris Wachuka</h5>
-		<h5>Translated by: Georgette McGlashen</h5>
-		<h5>Language: <a href="/storybooks-jamaica/stories/jam">Jamaican Creole</a></h5>
-		<h5><a href="/storybooks-jamaica/stories/jam/level3">Level 3</a></h5>
-		<h5>Source: <a href="https://africanstorybook.org/reader.php?id=13244" target="_blank">Sakima's song</a> from <a href="https://africanstorybook.org/">African Storybook</a></h5>
+		<h5><span class="colophon-heading">Written by:</span> Ursula Nafula</h5>
+		<h5><span class="colophon-heading">Illustrated by:</span> Peris Wachuka</h5>
+		<h5><span class="colophon-heading">Translated by:</span> Georgette McGlashen</h5>
+		<h5><span class="colophon-heading">Language:</span> <a href="/storybooks-jamaica/stories/jam">Jamaican Creole</a></h5>
+		<h5><span class="colophon-heading">Level:</span> <a href="/storybooks-jamaica/stories/jam/level3">Level 3</a></h5>
+		<h5><span class="colophon-heading">Source:</span> <a href="https://africanstorybook.org/reader.php?id=13244" target="_blank">Sakima's song</a> from <a href="https://africanstorybook.org/">African Storybook</a></h5>
 
 		<div><a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</div>
 
@@ -646,10 +688,9 @@ He took his son and Sakima to hospital so Sakima could regain his sight.
 </div>
 <div>
 <h5>Options</h5>
-	<a class="btn btn-lg" href="/storybooks-jamaica/stories/jam" class="button">Back to stories list</a> <a class="btn btn-lg disabled" target="_blank" href="">Download PDF</a>
+	<a class="btn btn-lg" href="/storybooks-jamaica/stories/jam" class="button">Back to stories list</a> <a class="btn btn-lg" href="https://globalstorybooks.net/media/sbjm/pdf/jam/jam-0315_sakima.pdf" target="_blank">Download PDF</a>
 <br><br>
 </div>
-
 
 
     </div>
